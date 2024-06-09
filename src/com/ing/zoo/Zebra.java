@@ -22,11 +22,6 @@ public class Zebra implements Herbivore, AnimalWithTrick {
     public String getName() {
         return name;
     }
-    
-    @Override
-    public boolean canDoTrick() {
-        return true;
-    }
 
     public void eatLeaves()
     {
@@ -46,6 +41,6 @@ public class Zebra implements Herbivore, AnimalWithTrick {
         {
             trick = "says a swearword";
         }
-        System.out.println(trick);
+        System.out.println(name + " " + trick);
     }
 }

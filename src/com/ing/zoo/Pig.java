@@ -16,10 +16,6 @@ public class Pig implements Carnivore, AnimalWithTrick  {
     public String getName() {
         return name;
     }
-    @Override
-    public boolean canDoTrick() {
-        return true;
-    }
     public void sayHello()
     {
         helloText = "splash (in mud)";
@@ -50,6 +46,6 @@ public class Pig implements Carnivore, AnimalWithTrick  {
         {
             trick = "runs in circles";
         }
-        System.out.println(trick);
+        System.out.println(name + " " + trick);
     }
 }

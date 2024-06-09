@@ -13,7 +13,10 @@ public class Zoo {
             new Hippo("elsa"),
             new Pig("dora"),
             new Tiger("wally"),
-            new Zebra("marty")};
+            new Zebra("marty"),
+            new Bunny("mr bunny"),
+            new Pony("twilight sparkle")            
+    };
 
     static <T> List<T> getAnimalsOfType(Class<T> animalType) {
         return Arrays.stream(animals)
@@ -42,23 +45,10 @@ public class Zoo {
                 for (Herbivore herbivore : getAnimalsOfType(Herbivore.class)) herbivore.eatLeaves();
             else if (input.equals("give meat"))
                 for (Carnivore carnivore : getAnimalsOfType(Carnivore.class)) carnivore.eatMeat();
-            else if (input.equals("trick")) {
-                for (Animal animal: animals){
-                }
-            }
-
-            switch (input.toLowerCase()) {
-                case "give leaves":
-                    for (Herbivore herbivore : getAnimalsOfType(Herbivore.class)) herbivore.eatLeaves();
-                    break;
-                case "give meat":
-                    for (Carnivore carnivore : getAnimalsOfType(Carnivore.class)) carnivore.eatMeat();
-                    break;
-            }
-
-            if (input.equals("bye")) return;
-
-            if (Arrays.stream(commands).noneMatch(input::contains))
+            else if (input.equals("perform trick")) {
+                for (AnimalWithTrick animalWithTrick : getAnimalsOfType(AnimalWithTrick.class)) animalWithTrick.performTrick();}
+            else if (input.equals("bye")) return;
+            else if (Arrays.stream(commands).noneMatch(input::contains))
                 System.out.println("the animals don't understand you");
         }
     }

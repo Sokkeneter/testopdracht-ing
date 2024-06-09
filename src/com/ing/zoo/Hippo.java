@@ -13,10 +13,6 @@ public class Hippo implements Herbivore {
     public String getName() {
         return name;
     }
-    @Override
-    public boolean canDoTrick() {
-        return false;
-    }
 
     public void sayHello()
     {

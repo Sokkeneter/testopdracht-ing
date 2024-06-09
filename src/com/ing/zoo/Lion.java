@@ -1,7 +1,7 @@
 package com.ing.zoo;
 
 public class Lion implements Carnivore {
-    private String name;
+    private final String name;
     private String helloText;
     private String eatText;
 
@@ -13,10 +13,6 @@ public class Lion implements Carnivore {
     @Override
     public String getName() {
         return name;
-    }
-    @Override
-    public boolean canDoTrick() {
-        return false;
     }
 
     public void sayHello()
