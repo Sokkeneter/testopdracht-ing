@@ -1,12 +1,18 @@
 package com.ing.zoo;
 
-public class Lion {
-    public String name;
-    public String helloText;
-    public String eatText;
+public class Lion implements Carnivore {
+    private final String name;
+    private String helloText;
+    private String eatText;
 
-    public Lion()
+    
+    public Lion(String name)
     {
+        this.name = name;
+    }
+    @Override
+    public String getName() {
+        return name;
     }
 
     public void sayHello()
