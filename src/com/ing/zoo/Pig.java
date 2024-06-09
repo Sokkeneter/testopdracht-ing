@@ -22,12 +22,6 @@ public class Pig implements Carnivore, AnimalWithTrick  {
         System.out.println(helloText);
     }
 
-    public void eatLeaves()
-    {
-        eatText = "munch munch oink";
-        System.out.println(eatText);
-    }
-
     public void eatMeat()
     {
         eatText = "nomnomnom oink thx";
