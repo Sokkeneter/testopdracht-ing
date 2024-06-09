@@ -2,19 +2,27 @@ package com.ing.zoo;
 
 import java.util.Random;
 
-public class Pig {
-    public String name;
-    public String helloText;
-    public String eatText;
-    public String trick;
+public class Pig implements Carnivore, AnimalWithTrick  {
+    private String name;
+    private String helloText;
+    private String eatText;
+    private String trick;
 
-    public Pig()
+    public Pig(String name)
     {
+        this.name = name;
     }
-
+    @Override
+    public String getName() {
+        return name;
+    }
+    @Override
+    public boolean canDoTrick() {
+        return true;
+    }
     public void sayHello()
     {
-        helloText = "splash";
+        helloText = "splash (in mud)";
         System.out.println(helloText);
     }
 

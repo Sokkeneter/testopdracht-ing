@@ -2,16 +2,24 @@ package com.ing.zoo;
 
 import java.util.Random;
 
-public class Tiger {
-    public String name;
-    public String helloText;
-    public String eatText;
-    public String trick;
+public class Tiger implements Carnivore, AnimalWithTrick  {
+    private String name;
+    private String helloText;
+    private String eatText;
+    private String trick;
 
-    public Tiger()
+    public Tiger(String name)
     {
+        this.name = name;
     }
-
+    @Override
+    public String getName() {
+        return name;
+    }
+    @Override
+    public boolean canDoTrick() {
+        return true;
+    }
     public void sayHello()
     {
         helloText = "rraaarww";

@@ -2,14 +2,15 @@ package com.ing.zoo;
 
 import java.util.Random;
 
-public class Zebra {
-    public String name;
-    public String helloText;
-    public String eatText;
-    public String trick;
+public class Zebra implements Herbivore, AnimalWithTrick {
+    private String name;
+    private String helloText;
+    private String eatText;
+    private String trick;
 
-    public Zebra()
+    public Zebra(String name)
     {
+        this.name = name;
     }
 
     public void sayHello()
@@ -17,10 +18,34 @@ public class Zebra {
         helloText = "zebra zebra";
         System.out.println(helloText);
     }
+    
+    public String getName() {
+        return name;
+    }
+    
+    @Override
+    public boolean canDoTrick() {
+        return true;
+    }
 
     public void eatLeaves()
     {
         eatText = "munch munch zank yee bra";
         System.out.println(eatText);
+    }
+
+    public void performTrick()
+    {
+        Random random = new Random();
+        int rnd = random.nextInt(2);
+        if(rnd == 0)
+        {
+            trick = "does a dance";
+        }
+        else
+        {
+            trick = "says a swearword";
+        }
+        System.out.println(trick);
     }
 }
